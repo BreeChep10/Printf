@@ -10,7 +10,7 @@
 
 int longy_integer(va_list all_args, char *buffer, unsigned int buffer_size)
 {
-	long int num = va_arg(all_args, int);
+	long int num = va_arg(all_args, long int);
 	unsigned int sign = 0, store, div = 1, count = 0;
 
 	if (num < 0)
