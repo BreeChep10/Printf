@@ -1,33 +1,27 @@
 #include "main.h"
-/*
+/**
+ * longy_integer - Function that prints a long integer.
+ * @all_args: The arguements to be taken.
+ * @buffer: Temporary storage.
+ * @buffer_size: Position of the buffer at run time.
+ *
+ * Return: The number of characters entered to the buffer..
  */
 
 int longy_integer(va_list all_args, char *buffer, unsigned int buffer_size)
 {
-	long num = va_arg(all_args, int);
-	int i, a, sign = 0, store = num, div = 1;
-	
-	if (num == 0)
-	{
-		buffer_size = add_buff(buffer, '0', buffer_size);
-		return 1;
-	}
+	long int num = va_arg(all_args, int);
+	unsigned int sign = 0, store, div = 1, count = 0;
+
 	if (num < 0)
+		sign = 1, num *= -1, buffer_size = add_buff(buffer, '-', buffer_size);
+	store = num;
+	while (store > 9)
+		store /= 10, div *= 10;
+	while (div > 0)
 	{
-		sign = 1;
-		num *= -1;
-		buffer_size = add_buff(buffer, '-', buffer_size);
+		buffer_size = add_buff(buffer, ((num / div) % 10) + '0', buffer_size);
+		div /= 10, count++;
 	}
-	for (i = 0; store != 0; i++)
-	{
-		store /= 10;
-		div *= 10;
-	}
-	while (div > 1)
-	{
-		div /= 10;
-		a = (num / div) % 10 + '0';
-		buffer_size = add_buff(buffer, a, buffer_size);
-	}
-	return (i + sign);
+	return (count + sign);
 }
