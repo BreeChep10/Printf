@@ -10,8 +10,12 @@
  * Return: The updated buffer size.
  */
 
-int percent_print(va_list all_args __attribute__((unused)), char *buffer, unsigned int buffer_size)
+int percent_print(va_list all_args, char *buffer, unsigned int buffer_size)
 {
+	char a = va_arg(all_args, int);
+
+	a = a + 2;
+
 	buffer_size = add_buff(buffer, '%', buffer_size);
 	return (1);
 }
