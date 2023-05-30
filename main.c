@@ -14,7 +14,9 @@ int main(void)
 	unsigned int ui;
 	void *addr;
 
-	_printf("codehex: %S\n", "Best\nSchool");
+        _printf("short hex %hX\n", 334);
+        printf("short hex %hX\n", 334);
+        _printf("codehex: %S\n", "Best\nSchool");
 	_printf("codehex: %S\n", "Best\tSchool");
 	_printf("% d\n", 25);
 	printf("% d\n", 25);
@@ -43,7 +45,7 @@ int main(void)
 	printf("Negative:[%d]\n", -762534);
 	_printf("Unsigned:[%u]\n", ui);
 	printf("Unsigned:[%u]\n", ui);
-	_printf("Unsigned octal:[%o]\n", ui);
+	_printf("Unsigned octal:[%#o]\n", ui);
 	printf("Unsigned octal:[%#o]\n", ui);
 	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);

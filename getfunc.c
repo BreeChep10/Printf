@@ -8,28 +8,29 @@ int (*getfunc(const char *format, int index))(va_list, char *, unsigned int)
 		{"x", print_lower_hex}, {"b", binary_conversion}, {"R", print_rot13}, {"p", print_memory_address},
 		{"r", print_reverse}, {"hd", shorty_integer}, {"hi", shorty_integer}, {"ld", longy_integer},
 		{"li", longy_integer}, {"S", print_codehex}, {"#x", print_0xhex}, {"#X", print_0Xhex},
-		{"#o", octal_print}, {" d", _print_int}, {" d", _print_int}, {NULL, NULL}
+		{"#o", octal_print}, {" d", _print_int}, {" d", _print_int}, {"hx", short_hex},
+                {"hX", short_heX}, {NULL, NULL}
 	};
-
+	
 	int i = 0, j = 0;
 	int reset = index;
-
+	
 	while (specifiers[i].data != NULL)
 	{
 		j = 0;
 		index = reset;
-
+		
 		while (format[index] && format[index] == specifiers[i].data[j])
 		{
 			index++;
 			j++;
-
+			
 			if (specifiers[i].data[j] == '\0')
-				return (specifiers[i].f);
+				return specifiers[i].f;
 		}
-
+		
 		i++;
 	}
-
-	return (NULL);
+	
+	return NULL;
 }
