@@ -1,5 +1,16 @@
 #include "main.h"
 
+/**
+ * getfunc - function is responsible for retrieving the
+ * appropriate function pointer based on the provided format and index
+ *
+ * @format: specifies the format of the conversion specifier being processed.
+ * @index: index within the format string where the conversion
+ *         specifier is located.
+ *
+ * Return: an integer
+ *
+ */
 int (*getfunc(const char *format, int index))(va_list, char *, unsigned int)
 {
 	spec_t specifiers[] = {
@@ -11,13 +22,13 @@ int (*getfunc(const char *format, int index))(va_list, char *, unsigned int)
 		{"R", print_rot13}, {"p", print_memory_address},
 		{"r", print_reverse}, {NULL, NULL}
 	};
-	
+
 	unsigned int i, j = 0, hold = j;
-	
- 	for (i = 0; i < sizeof(specifiers) / sizeof(spec_t); i++)
- 	{
- 		if (format[index] == specifiers[i].data[j])
- 		{
+
+	for (i = 0; i < sizeof(specifiers) / sizeof(spec_t); i++)
+	{
+		if (format[index] == specifiers[i].data[j])
+		{
 			if (specifiers[i].data[j + 1])
 			{
 				j++;
@@ -26,12 +37,11 @@ int (*getfunc(const char *format, int index))(va_list, char *, unsigned int)
 				else
 					j = hold;
 			}
-				    
+
 			return (specifiers[i].f);
 			break;
-			
 		}
- 	}
- 	return (NULL);
-	
+	}
+	return (NULL);
 }
+
