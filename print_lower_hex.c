@@ -1,8 +1,18 @@
 #include "main.h"
-/*
-*/
+
+/**
+ * print_lower_hex - Handles the conversion specifier "x" to
+ *       print an unsigned integer as a lowercase hexadecimal number.
+ *
+ * @all_args: va_list containing the arguments passed to the function.
+ * @buffer: Pointer to the buffer where the hexadecimal number will be stored.
+ * @buffer_size: Size of the buffer.
+ *
+ * Return: The updated buffer size.
+ */
+
 int print_lower_hex(va_list all_args, char *buffer, unsigned int buffer_size)
-	
+
 {
 	unsigned int num = va_arg(all_args, unsigned int);
 	char *hex_array = malloc(sizeof(char) * 32 + 1), temp;
