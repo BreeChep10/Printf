@@ -13,13 +13,21 @@ typedef struct specifiers {
 	int (*f)(va_list, char *, unsigned int);
 } spec_t;
 
+int _print_int(va_list all_args, char *buffer, unsigned int buffer_size);
+int octal_print(va_list all_args, char *buffer, unsigned int buffer_size);
+int print_0Xhex(va_list all_args, char *buffer, unsigned int buffer_size);
+int skip(const char *format, int index);
+int print_codehex(va_list all_args, char *buffer, unsigned int buffer_size);
+int print_0xhex(va_list all_args, char *buffer, unsigned int buffer_size);
+int longy_integer(va_list all_args, char *buffer, unsigned int buffer_size);
+int shorty_integer(va_list args, char *buffer, unsigned int buffer_size);
 int print_reverse(va_list args, char *buffer, unsigned int buffer_size);
 int print_memory_address(va_list args, char *buffer, unsigned int buffer_size);
 int print_rot13(va_list all_args, char *buffer, unsigned int buffer_size);
 int binary_conversion(va_list all_args, char *buffer, unsigned int buffer_size);
 int print_upper_hex(va_list all_args, char *buffer, unsigned int buffer_size);
 int print_lower_hex(va_list all_args, char *buffer, unsigned int buffer_size);
-/*int print_uoctal(va_list all_args, char *buffer, unsigned int buffer_size);*/
+int print_uoctal(va_list all_args, char *buffer, unsigned int buffer_size);
 int print_uint(va_list all_args, char *buffer, unsigned int buffer_size);
 int percent_print(va_list all_args, char *buffer, unsigned int buffer_size);
 int str_print(va_list all_args, char *buffer, unsigned int buffer_size);
