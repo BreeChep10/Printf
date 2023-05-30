@@ -4,6 +4,7 @@ int print_uint(va_list all_args, char *buffer, unsigned int buffer_size)
 {
 	unsigned int num, i, div = 1;
 	char a;
+
 	num = va_arg(all_args, unsigned int);
 
 	for (i = 0; num / div > 9; i++)

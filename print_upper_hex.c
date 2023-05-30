@@ -1,6 +1,12 @@
 #include "main.h"
-/*
-*/
+/**
+ * print_upper_hex - Converts and prints an integer as uppercase hexadecimal.
+ * @all_args: A list of arguments passed to the function (unused).
+ * @buffer: The buffer to store the converted hexadecimal value.
+ * @buffer_size: The size of the buffer.
+ * Return: The updated size of the buffer.
+ */
+
 int print_upper_hex(va_list all_args, char *buffer, unsigned int buffer_size)
 {
 	unsigned int num = va_arg(all_args, unsigned int);
@@ -25,7 +31,7 @@ int print_upper_hex(va_list all_args, char *buffer, unsigned int buffer_size)
 		hex_array[i] = '0', i++;
 
 	hex_array[i] = '\0';
-	start = 0, end = i -1;
+	start = 0, end = i - 1;
 
 	while (start < end)
 	{

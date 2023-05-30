@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 			{
 				i += skip(format, i + 1);
 				length += func(all_args, buffer, buffer_index);
-				
+
 			}
 		}
 
@@ -56,5 +56,5 @@ int _printf(const char *format, ...)
 	print_buffer(buffer, buffer_index);
 	free(buffer);
 	va_end(all_args);
-	return length;
+	return (length);
 }
