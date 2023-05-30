@@ -13,6 +13,7 @@ typedef struct specifiers {
 	int (*f)(va_list, char *, unsigned int);
 } spec_t;
 
+int prct(va_list all_args __attribute__((unused)), char *b, unsigned int s);
 int louoct(va_list all_args, char *buffer, unsigned int buffer_size);
 int louint(va_list all_args, char *buffer, unsigned int buffer_size);
 int short_octal(va_list all_args, char *buffer, unsigned int buffer_size);
