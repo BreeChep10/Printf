@@ -13,7 +13,10 @@ int main(void)
 	int len2;
 	unsigned int ui;
 	void *addr;
-
+        _printf("short octal %ho\n", 3444556777777);
+        printf("short octal %ho\n", 3444556777777);
+        _printf("short unsigned %hu\n", 457000000);
+        printf("short unsigned %hu\n", 457000000);
         _printf("short hex %hX\n", 334);
         printf("short hex %hX\n", 334);
         _printf("codehex: %S\n", "Best\nSchool");

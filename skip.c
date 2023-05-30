@@ -10,7 +10,7 @@ int skip(const char *format, int index)
 		{"r", print_reverse}, {"hd", shorty_integer}, {"hi", shorty_integer}, {"ld", longy_integer},
 		{"li", longy_integer}, {"#x", print_0xhex}, {"S", print_codehex}, {"#X", print_0Xhex},
 		{"#o", octal_print}, {" d", _print_int}, {" d", _print_int}, {"hx", short_hex},
-                {"hX", short_hex}, {NULL, NULL}
+                {"hX", short_hex}, {"hu", short_uint}, {"ho", short_octal}, {NULL, NULL}
 	};
 	
 	int i = 0, j = 0;
