@@ -12,16 +12,12 @@
 int binary_conversion(va_list all_args, char *buffer, unsigned int buffer_size)
 {
 	char *array = malloc((32 + 1) * sizeof(char));
-	int i, num, test = 0, sign = 0;
+	int i, num, test = 0, sign = 0, count = 0;
 
 	num = va_arg(all_args, int);
 
 	if (!array)
-	{
-		free(array);
 		return (0);
-	}
-
 	if (num < 0)
 		sign = 1, num *= -1, num -= 1;
 
@@ -40,10 +36,11 @@ int binary_conversion(va_list all_args, char *buffer, unsigned int buffer_size)
 		{
 			array[i] = ((array[i] == '1') ? '0' : '1');
 			buffer_size = add_buff(buffer, array[i], buffer_size);
+			count++;
 		}
 		if (test == 1 && !sign)
-			buffer_size = add_buff(buffer, array[i], buffer_size);
+			buffer_size = add_buff(buffer, array[i], buffer_size), count++;
 	}
 	free(array);
-	return (i);
+	return (count);
 }
