@@ -19,7 +19,7 @@ int (*getfunc(const char *format, int index))(va_list, char *, unsigned int)
 		{"#x", print_0xhex}, {"#X", print_0Xhex}, {"#o", octal_print},
 		{" d", _print_int}, {" d", _print_int}, {"hx", short_hex},
 		{"hX", short_heX}, {"hu", short_uint}, {"ho", short_octal},
-		{"lu", louint}, {"lo", louoct}, {NULL, NULL}
+		{"lu", louint}, {"lo", louoct}, {"lX", long_heX}, {NULL, NULL}
 	};
 
 	int i = 0, j = 0;

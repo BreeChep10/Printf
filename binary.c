@@ -3,13 +3,13 @@
 /**
  * binary_conversion - Function that converts to binary.
  * @all_args: All arguements passed.
- * @buffer: Pointer to the temporary storage.
+ * @b: Pointer to the temporary storage.
  * @buffer_size: The position of the buffer.
  *
  * Return: Buffer_size.
  */
 
-int binary_conversion(va_list all_args, char *buffer, unsigned int buffer_size)
+int binary_conversion(va_list all_args, char *b, unsigned int buffer_size)
 {
 	char *array = malloc((32 + 1) * sizeof(char));
 	int i, num, test = 0, sign = 0, count = 0;
@@ -35,11 +35,11 @@ int binary_conversion(va_list all_args, char *buffer, unsigned int buffer_size)
 		if (sign)
 		{
 			array[i] = ((array[i] == '1') ? '0' : '1');
-			buffer_size = add_buff(buffer, array[i], buffer_size);
+			buffer_size = add_buff(b, array[i], buffer_size);
 			count++;
 		}
 		if (test == 1 && !sign)
-			buffer_size = add_buff(buffer, array[i], buffer_size), count++;
+			buffer_size = add_buff(b, array[i], buffer_size), count++;
 	}
 	free(array);
 	return (count);
