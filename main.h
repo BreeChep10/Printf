@@ -19,7 +19,7 @@ int print_rot13(va_list all_args, char *buffer, unsigned int buffer_size);
 int binary_conversion(va_list all_args, char *buffer, unsigned int buffer_size);
 int print_upper_hex(va_list all_args, char *buffer, unsigned int buffer_size);
 int print_lower_hex(va_list all_args, char *buffer, unsigned int buffer_size);
-int print_uoctal(va_list all_args, char *buffer, unsigned int buffer_size);
+/*int print_uoctal(va_list all_args, char *buffer, unsigned int buffer_size);*/
 int print_uint(va_list all_args, char *buffer, unsigned int buffer_size);
 int percent_print(va_list all_args, char *buffer, unsigned int buffer_size);
 int str_print(va_list all_args, char *buffer, unsigned int buffer_size);
