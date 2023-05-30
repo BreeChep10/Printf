@@ -1,13 +1,5 @@
 #include "main.h"
 
-/**
- * _printf - Custom implementation of the printf function.
- * @format: A constant character pointer specifying the format string.
- * @...: Additional arguments to be formatted and printed.
- *
- * Return: The number of characters printed on success, or -1 on error.
- */
-
 int _printf(const char *format, ...)
 {
 	va_list all_args;
@@ -52,8 +44,9 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
+				i += skip(format, i + 1);
 				length += func(all_args, buffer, buffer_index);
-				i++;
+				
 			}
 		}
 
@@ -63,5 +56,5 @@ int _printf(const char *format, ...)
 	print_buffer(buffer, buffer_index);
 	free(buffer);
 	va_end(all_args);
-	return (length);
+	return length;
 }
