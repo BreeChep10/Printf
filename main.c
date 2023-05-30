@@ -13,6 +13,8 @@ int main(void)
 	int len2;
 	unsigned int ui;
 	void *addr;
+        _printf("long int %lu\n", 200000000000);
+        printf("long int %lu\n", 200000000000);
         _printf("short octal %ho\n", 3444556777777);
         printf("short octal %ho\n", 3444556777777);
         _printf("short unsigned %hu\n", 457000000);

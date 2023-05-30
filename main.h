@@ -13,6 +13,7 @@ typedef struct specifiers {
 	int (*f)(va_list, char *, unsigned int);
 } spec_t;
 
+int louint(va_list all_args, char *buffer, unsigned int buffer_size);
 int short_octal(va_list all_args, char *buffer, unsigned int buffer_size);
 int short_uint(va_list all_args, char *buffer, unsigned int buffer_size);
 int short_heX(va_list all_args, char *buffer, unsigned int buffer_size);

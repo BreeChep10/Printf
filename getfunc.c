@@ -9,7 +9,8 @@ int (*getfunc(const char *format, int index))(va_list, char *, unsigned int)
 		{"r", print_reverse}, {"hd", shorty_integer}, {"hi", shorty_integer}, {"ld", longy_integer},
 		{"li", longy_integer}, {"S", print_codehex}, {"#x", print_0xhex}, {"#X", print_0Xhex},
 		{"#o", octal_print}, {" d", _print_int}, {" d", _print_int}, {"hx", short_hex},
-                {"hX", short_heX}, {"hu", short_uint}, {"ho", short_octal}, {NULL, NULL}
+                {"hX", short_heX}, {"hu", short_uint}, {"ho", short_octal}, {"lu", louint},
+                {NULL, NULL}
 	};
 	
 	int i = 0, j = 0;
