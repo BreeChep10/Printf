@@ -7,7 +7,7 @@
 int print_integer(va_list all_args, char *buffer, unsigned int buffer_size)
 {
 	int num = va_arg(all_args, int);
-	int sign = 0, store, div = 1, count = 0;
+	unsigned int sign = 0, store, div = 1, count = 0;
 
 	if (num < 0)
 		sign = 1, num *= -1, buffer_size = add_buff(buffer, '-', buffer_size);
