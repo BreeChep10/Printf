@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * print_codehex - Prints the hexadecimal code representation of a character.
+ * @all_args: The argument list containing the character to be printed.
+ * @buffer: The buffer to store the resulting output.
+ * @buffer_size: The size of the buffer.
+ * Return: The updated size of the buffer after appending the hexadecimal code.
+ */
+
 int print_codehex(va_list all_args, char *buffer, unsigned int buffer_size)
 {
 	char *str = va_arg(all_args, char *);

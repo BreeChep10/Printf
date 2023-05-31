@@ -1,7 +1,15 @@
 #include "main.h"
 
+/**
+ * short_hex - Prints a short integer in hexadecimal format.
+ * @all_args: A va_list containing the arguments for formatting.
+ * @buffer: The buffer to store the formatted string.
+ * @buffer_size: The size of the buffer.
+ * Return: The number of characters written to the buffer.
+ */
+
 int short_hex(va_list all_args, char *buffer, unsigned int buffer_size)
-	
+
 {
 	short unsigned int num = va_arg(all_args, unsigned int);
 	char *hex_array = malloc(sizeof(char) * 32 + 1), temp;

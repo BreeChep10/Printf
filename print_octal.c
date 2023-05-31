@@ -1,5 +1,11 @@
 #include "main.h"
-
+/**
+ * print_uoctal - Prints an unsigned integer in octal format.
+ * @all_args: A va_list containing the arguments for formatting.
+ * @buffer: The buffer to store the formatted string.
+ * @buffer_size: The size of the buffer
+ * Return: The number of characters written to the buffer.
+ */
 
 int print_uoctal(va_list all_args, char *buffer, unsigned int buffer_size)
 {
