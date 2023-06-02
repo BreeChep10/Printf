@@ -2,29 +2,26 @@
 
 int louoct(va_list all_args, char *buffer, unsigned int buffer_size)
 {
-        long unsigned int num = va_arg(all_args, long unsigned  int), sign = 0, test = 0, count = 0;
-	int i;
-	char *array = malloc((32 + 1) * sizeof(char));
+	long int num = va_arg(all_args, long int);
+	char *binary_array = malloc(sizeof(char) * 33);
+	char *octal_array = malloc(sizeof(char) * (11 + 1));
+	int count = 0, i, check = 0;
 
-	if (num == 0)
-	{
-		buffer_size = add_buff(buffer, '0', buffer_size);
-		return (1);
-	}	
-	for (i = 0; i < 32; i++)
-		array[i] = '0';
-	array[32] = '\0';
-	for (i = 31; i >=0 && num > 0; i--)
-		array[i] = (num % 8) + '0', num /= 8;
-	
+	if (!binary_array || !octal_array)
+		return (0);
+
+	binary_array = to_binary(binary_array, num, 32);
+	octal_array = binary_to_octal(binary_array, octal_array, 11);
 	for (i = 0; i < 32; i++)
 	{
-		if (array[i + 1] != '0')
-			test = 1;
-		if (test == 1)
-			buffer_size = add_buff(buffer, array[i], buffer_size), count++;
+		if (octal_array[i] != '0')
+                        check = 1;
+                if (check == 1)
+			buffer_size = add_buff(buffer, octal_array[i], buffer_size), count++;
 	}
-	free(array);
-	return (count + sign);
+	free(binary_array);
+	free(octal_array);
+
+	return (count);
 }
 

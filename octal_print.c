@@ -1,7 +1,7 @@
 #include "main.h"
 
 
-int octal_print(va_list all_args, char *buffer, unsigned int buffer_size)
+int uoctal_print(va_list all_args, char *buffer, unsigned int buffer_size)
 {
 	unsigned int num = va_arg(all_args,unsigned  int), sign = 0, test = 0, count = 0;
 	int i;
