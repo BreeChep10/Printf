@@ -12,7 +12,13 @@ int print_lower_hex(va_list all_args, char *buffer, unsigned int buffer_size)
         {
                 _printf("Error\n");
 		return (0);
-        }
+	}
+	if (num == 0)
+	{
+		buffer_size = add_buff(buffer, '0', buffer_size);
+		free(binary_array), free(hex_array);
+		return (1);
+	}
         binary_array = to_binary(binary_array, num, 32);
         hex_array = binary_to_hex(binary_array, hex_array, 'l', 8);
 	for (i = 0; i < 8; i++)
