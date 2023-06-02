@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+  * print_memory_address - Prints a memory address.
+  * @args: A list of arguments passed to the function.
+  * @buffer: The buffer to store the printed characters.
+  * @buffer_size: The size of the buffer.
+  * Return: The updated size of the buffer.
+  */
+
 int print_memory_address(va_list args, char *buffer, unsigned int buffer_size)
 {
 	void *mem = va_arg(args, void *);
