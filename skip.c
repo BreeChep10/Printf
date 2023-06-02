@@ -12,6 +12,7 @@ int skip(const char *format, int index)
 {
         
         spec_t specifiers[] = {
+		{"R", print_rot13},
                 {"b", binary_conversion},
                 {"c", print_char},
                 {"i", print_integer},
