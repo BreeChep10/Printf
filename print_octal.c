@@ -10,7 +10,12 @@ int print_octal(va_list all_args, char *buffer, unsigned int buffer_size)
 
 	if (!binary_array || !octal_array)
 		return (0);
-
+	if (num == 0)
+	{
+		buffer_size = add_buff(buffer, '0', buffer_size);
+		free(binary_array), free(octal_array);
+		return (1);
+	}
 	binary_array = to_binary(binary_array, num, 32);
 	octal_array = binary_to_octal(binary_array, octal_array, 11);
 	for (i = 0; i < 11; i++)
