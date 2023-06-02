@@ -1,7 +1,7 @@
 #include "main.h"
 /*
 */
-int print_lower_hex(va_list all_args, char *buffer, unsigned int buffer_size)
+int print_plus_upper_hex(va_list all_args, char *buffer, unsigned int buffer_size)
 	
 {
 	int num = va_arg(all_args, int);
@@ -13,8 +13,8 @@ int print_lower_hex(va_list all_args, char *buffer, unsigned int buffer_size)
                 _printf("Error\n");
 		return (0);
         }
-        binary_array = to_binary(binary_array, num, 32);
-        hex_array = binary_to_hex(binary_array, hex_array, 'l', 8);
+        binary_array = to_binary(binary_array, num, 8);
+        hex_array = binary_to_hex(binary_array, hex_array, 'u', 8);
 	for (i = 0; i < 8; i++)
         {
                 if (hex_array[i] !='0')
