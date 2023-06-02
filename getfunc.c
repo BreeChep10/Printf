@@ -10,6 +10,7 @@
 int (*getfunc(const char *format, int index))(va_list, char *, unsigned int)
 {
 	spec_t specifiers[] = {
+		{"R", print_rot13},
                 {"b", binary_conversion},
                 {"c", print_char},
                 {"i", print_integer},
